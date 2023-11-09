@@ -1,0 +1,299 @@
+import java.util.Scanner;
+
+class conversion {
+    private static final double INR_TO_USD = 0.012;
+    private static final double EUR_TO_USD = 1.06;
+    private static final double GBP_TO_USD = 1.21;
+    private static final double CHF_TO_USD = 1.10;
+    private static final double Dinar_TO_USD = 3.25;
+    private static final double Yen_TO_USD = 0.0067;
+    private static final double AUD_TO_USD = 0.633;
+    private static final double CAD_TO_USD = 0.72;
+    private static final double PESO_TO_USD = 0.0552;
+
+    private static final double EUR_TO_INR = 88.17;
+    private static final double GBP_TO_INR = 101.17;
+    private static final double CHF_TO_INR = 92.48;
+    private static final double Dinar_TO_INR = 269.79;
+    private static final double Yen_TO_INR = 0.557;
+    private static final double AUD_TO_INR = 52.84;
+    private static final double CAD_TO_INR = 60.09;
+    private static final double PESO_TO_INR = 4.60;
+
+    private static final double EUR_TO_GBP = 0.824;
+    private static final double PESO_TO_GBP = 0.0455;
+    private static final double CHF_TO_GBP = 0.914;
+    private static final double Dinar_TO_GBP = 2.66;
+    private static final double Yen_TO_GBP = 0.0055;
+    private static final double AUD_TO_GBP = 0.522;
+    private static final double CAD_TO_GBP = 0.593;
+
+    private static final double CHF_TO_EUR = 1.04;
+    private static final double Dinar_TO_EUR = 3.059;
+    private static final double Yen_TO_EUR = 0.0063;
+    private static final double AUD_TO_EUR = 0.599;
+    private static final double CAD_TO_EUR = 0.681;
+    private static final double PESO_TO_EUR = 0.0522;
+
+    private static final double Dinar_TO_CHF = 2.917;
+    private static final double Yen_TO_CHF = 0.0060;
+    private static final double AUD_TO_CHF = 0.571;
+    private static final double CAD_TO_CHF = 0.649;
+    private static final double PESO_TO_CHF = 0.049;
+
+    private static final double Yen_TO_Dinar = 0.0020;
+    private static final double AUD_TO_Dinar = 0.195;
+    private static final double CAD_TO_Dinar = 0.222;
+    private static final double PESO_TO_Dinar = 0.017;
+
+    private static final double AUD_TO_Yen = 94.81;
+    private static final double CAD_TO_Yen = 107.82;
+    private static final double PESO_TO_Yen = 8.26;
+
+    private static final double CAD_TO_AUD = 1.137;
+    private static final double PESO_TO_AUD = 0.0871;
+
+    private static final double PESO_TO_CAD = 0.0766;
+
+    public static double convertCurrency(double amount, String fromCurrency, String toCurrency) {
+        double convertedAmount = 0; // Default: Conversion not supported
+
+        if (fromCurrency.equals("INR") && toCurrency.equals("USD")) {
+            convertedAmount = amount * INR_TO_USD;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("USD")) {
+            convertedAmount = amount * EUR_TO_USD;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("USD")) {
+            convertedAmount = amount * GBP_TO_USD;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("USD")) {
+            convertedAmount = amount * CHF_TO_USD;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("USD")) {
+            convertedAmount = amount * Dinar_TO_USD;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("USD")) {
+            convertedAmount = amount * Yen_TO_USD;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("USD")) {
+            convertedAmount = amount * AUD_TO_USD;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("USD")) {
+            convertedAmount = amount * CAD_TO_USD;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("USD")) {
+            convertedAmount = amount * PESO_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("INR")) {
+            convertedAmount = amount / INR_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("EUR")) {
+            convertedAmount = amount / EUR_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("GBP")) {
+            convertedAmount = amount / GBP_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("CHF")) {
+            convertedAmount = amount / CHF_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount / Dinar_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("YEN")) {
+            convertedAmount = amount / Yen_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("AUD")) {
+            convertedAmount = amount / AUD_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_USD;
+        } else if (fromCurrency.equals("USD") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_USD;
+        }
+
+        else if (fromCurrency.equals("GBP") && toCurrency.equals("INR")) {
+            convertedAmount = amount * GBP_TO_INR;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("INR")) {
+            convertedAmount = amount * CHF_TO_INR;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("INR")) {
+            convertedAmount = amount * Dinar_TO_INR;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("INR")) {
+            convertedAmount = amount * Yen_TO_INR;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("INR")) {
+            convertedAmount = amount * AUD_TO_INR;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("INR")) {
+            convertedAmount = amount * CAD_TO_INR;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("INR")) {
+            convertedAmount = amount * PESO_TO_INR;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("INR")) {
+            convertedAmount = amount * EUR_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("EUR")) {
+            convertedAmount = amount / EUR_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("GBP")) {
+            convertedAmount = amount / GBP_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("CHF")) {
+            convertedAmount = amount / CHF_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount / Dinar_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("YEN")) {
+            convertedAmount = amount / Yen_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("AUD")) {
+            convertedAmount = amount / AUD_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_INR;
+        } else if (fromCurrency.equals("INR") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_INR;
+        }
+
+        else if (fromCurrency.equals("EUR") && toCurrency.equals("GBP")) {
+            convertedAmount = amount * EUR_TO_GBP;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("GBP")) {
+            convertedAmount = amount * CHF_TO_GBP;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("GBP")) {
+            convertedAmount = amount * Dinar_TO_GBP;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("GBP")) {
+            convertedAmount = amount * Yen_TO_GBP;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("GBP")) {
+            convertedAmount = amount * AUD_TO_GBP;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("GBP")) {
+            convertedAmount = amount * CAD_TO_GBP;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("GBP")) {
+            convertedAmount = amount * PESO_TO_GBP;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_GBP;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("EUR")) {
+            convertedAmount = amount / EUR_TO_GBP;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_GBP;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("CHF")) {
+            convertedAmount = amount / CHF_TO_GBP;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount / Dinar_TO_GBP;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("YEN")) {
+            convertedAmount = amount / Yen_TO_GBP;
+        } else if (fromCurrency.equals("GBP") && toCurrency.equals("AUD")) {
+            convertedAmount = amount / AUD_TO_GBP;
+        }
+
+        else if (fromCurrency.equals("CHF") && toCurrency.equals("EUR")) {
+            convertedAmount = amount * CHF_TO_EUR;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("EUR")) {
+            convertedAmount = amount * Dinar_TO_EUR;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("EUR")) {
+            convertedAmount = amount * Yen_TO_EUR;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("EUR")) {
+            convertedAmount = amount * AUD_TO_EUR;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("EUR")) {
+            convertedAmount = amount * CAD_TO_EUR;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("EUR")) {
+            convertedAmount = amount * PESO_TO_EUR;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_EUR;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("AUD")) {
+            convertedAmount = amount / AUD_TO_EUR;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_EUR;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("CHF")) {
+            convertedAmount = amount / CHF_TO_EUR;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount / Dinar_TO_EUR;
+        } else if (fromCurrency.equals("EUR") && toCurrency.equals("YEN")) {
+            convertedAmount = amount / Yen_TO_EUR;
+        }
+
+        else if (fromCurrency.equals("DINAR") && toCurrency.equals("CHF")) {
+            convertedAmount = amount * Dinar_TO_CHF;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("CHF")) {
+            convertedAmount = amount * Yen_TO_CHF;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("CHF")) {
+            convertedAmount = amount * AUD_TO_CHF;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("CHF")) {
+            convertedAmount = amount * CAD_TO_CHF;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("CHF")) {
+            convertedAmount = amount * PESO_TO_CHF;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_CHF;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("AUD")) {
+            convertedAmount = amount / AUD_TO_CHF;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_CHF;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("YEN")) {
+            convertedAmount = amount / Yen_TO_CHF;
+        } else if (fromCurrency.equals("CHF") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount / Dinar_TO_CHF;
+        }
+
+        else if (fromCurrency.equals("YEN") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount * Yen_TO_Dinar;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount * AUD_TO_Dinar;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount * CAD_TO_Dinar;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("DINAR")) {
+            convertedAmount = amount * PESO_TO_Dinar;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_Dinar;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("AUD")) {
+            convertedAmount = amount / AUD_TO_Dinar;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_Dinar;
+        } else if (fromCurrency.equals("DINAR") && toCurrency.equals("YEN")) {
+            convertedAmount = amount / Yen_TO_Dinar;
+        }
+
+        else if (fromCurrency.equals("AUD") && toCurrency.equals("YEN")) {
+            convertedAmount = amount * AUD_TO_Yen;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("YEN")) {
+            convertedAmount = amount * CAD_TO_Yen;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("YEN")) {
+            convertedAmount = amount * PESO_TO_Yen;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_Yen;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("AUD")) {
+            convertedAmount = amount / AUD_TO_Yen;
+        } else if (fromCurrency.equals("YEN") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_Yen;
+        }
+
+        else if (fromCurrency.equals("CAD") && toCurrency.equals("AUD")) {
+            convertedAmount = amount * CAD_TO_AUD;
+        } else if (fromCurrency.equals("PESO") && toCurrency.equals("AUD")) {
+            convertedAmount = amount * PESO_TO_AUD;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("CAD")) {
+            convertedAmount = amount / CAD_TO_AUD;
+        } else if (fromCurrency.equals("AUD") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_AUD;
+        }
+
+        else if (fromCurrency.equals("PESO") && toCurrency.equals("CAD")) {
+            convertedAmount = amount * PESO_TO_CAD;
+        } else if (fromCurrency.equals("CAD") && toCurrency.equals("PESO")) {
+            convertedAmount = amount / PESO_TO_CAD;
+        }
+
+        return convertedAmount;
+    }
+}
+
+public class currencyconvert extends conversion {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("**********CURRENCY CONVERTER PROGRAM**********");
+        System.out.println(
+                "\nAvailable Currencies-\n\nINR = Indian Rupee\nEUR = Euro\nGBP = British Pound\nUSD = US Dollar\nCHF = Swiss Franc\nDINAR = Kuwaiti Dinar\nYEN = Japanese Yen\nAUD = Australian Dollar\nCAD = Canadian Dollar\nPESO = Mexican Peso");
+
+        System.out.println("\nEnter the amount to be converted: ");
+        double amount = sc.nextDouble();
+        sc.nextLine();
+        System.out.println("\nFrom currency (e.g., INR, EUR, GBP, USD, CHF, Dinar, Yen, AUD, CAD, PESO): ");
+        String fromCurrency = sc.nextLine().toUpperCase();
+        System.out.println("\nTo currency (e.g., INR, EUR, GBP, USD, CHF, Dinar, Yen, AUD, CAD, PESO): ");
+        String toCurrency = sc.nextLine().toUpperCase();
+
+        double convertedAmount = conversion.convertCurrency(amount, fromCurrency, toCurrency);
+
+        if (convertedAmount >= 0) {
+            System.out.printf("\n%.2f %s is equivalent to %.2f %s.%n", amount, fromCurrency, convertedAmount,
+                    toCurrency);
+        } else {
+            System.out.println("Conversion not supported.");
+        }
+        System.out.println("Press 1 to convert another value or 2 to exit.");
+        int choice = sc.nextInt();
+
+        if (choice == 1) {
+            main(args);
+        } else if (choice == 2) {
+            System.out.println("Thank You for using the program!!!");
+            System.exit(0);
+        }
+
+        sc.close();
+    }
+}
